@@ -12,18 +12,35 @@
                 <h4 class="modal-title" id="createTaskModel">Add task</h4>
             </div>
             <div class="modal-body">
-                <form>
+                <form method="post" action="{{asset('addtask')}}" data-toggle="validator" role="form">
+
                     <div class="form-group">
                         <label for="exampleInputName">Name</label>
-                        <input name="name" type="text" class="form-control" id="exampleInputName" placeholder="Name">
+                        <div class="help-block">Minimum of 6 characters</div>
+                        <input name="name"
+                               type="text"
+                               class="form-control"
+                               id="exampleInputName"
+                               placeholder="Name"
+                               maxlength="60"
+                               minlength="6"
+                               required>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputDescription">Description for task</label>
-                        <textarea name="desc" class="form-control" rows="3" id="exampleInputDescription" placeholder="Description for task"></textarea>
+                        <div class="help-block">Minimum of 20 characters</div>
+                        <textarea name="desc"
+                                  class="form-control"
+                                  rows="3"
+                                  id="exampleInputDescription"
+                                  maxlength="255"
+                                  minlength="2"
+                                  placeholder="Description for task"
+                                  required></textarea>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputStatus">Status</label>
-                        <select class="form-control">
+                        <select name="status_id" class="form-control" required>
                             <option selected disabled>Select the status</option>
                                 @foreach($statuses as $status)
                                     <option value="{{$status->id}}">{{$status->name}}</option>

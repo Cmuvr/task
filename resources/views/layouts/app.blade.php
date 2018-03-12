@@ -69,7 +69,8 @@
         @yield('content')
     </div>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    @section('scripts')
+        <script src="{{ asset('js/app.js') }}"></script>
+    @show
 </body>
 </html>
