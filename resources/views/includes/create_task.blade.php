@@ -3,10 +3,6 @@
     Create task
 </button>
 
-
-
-
-
 <!-- Modal -->
 <div class="modal fade" id="createTask" tabindex="-1" role="dialog" aria-labelledby="createTaskModel">
     <div class="modal-dialog" role="document">
@@ -29,11 +25,9 @@
                         <label for="exampleInputStatus">Status</label>
                         <select class="form-control">
                             <option selected disabled>Select the status</option>
-                            @if(isset($statuses))
                                 @foreach($statuses as $status)
                                     <option value="{{$status->id}}">{{$status->name}}</option>
                                 @endforeach
-                            @endif
                         </select>
                     </div>
                     <button type="submit" class="btn btn-default">Submit</button>

@@ -14,7 +14,7 @@ class ViewServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer('includes.create_task', 'App\Providers\ViewComposers\ReturnStatusesComposer');
+        View::composer(['includes.create_task', 'includes.status_blocks'], 'App\Providers\ViewComposers\ReturnStatusesComposer');
     }
 
     /**
