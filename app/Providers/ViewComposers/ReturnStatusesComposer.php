@@ -1,7 +1,15 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Cmuvr
- * Date: 12.03.2018
- * Time: 13:14
- */
+
+namespace App\Providers\ViewComposers;
+
+use Illuminate\Contracts\View\View;
+use App\Status;
+
+
+class returnStatusesComposer
+{
+    public function compose(View $view){
+        $statuses = Status::get();
+        $view->with('statuses', $statuses);
+    }
+}
