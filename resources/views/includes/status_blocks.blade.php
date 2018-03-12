@@ -2,7 +2,8 @@
     <div class="col-md-4">
         <h1 style="text-align: center">{{$status->name}}</h1>
         <div class="panel-group" id="accordion_{{$status->id}}">
-            @foreach($tasks->where('status_id', $status->id) as $task)
+
+            @foreach($status->task as $task)
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">

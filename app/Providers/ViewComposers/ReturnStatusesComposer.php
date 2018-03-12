@@ -11,8 +11,6 @@ class returnStatusesComposer
 {
     public function compose(View $view){
         $statuses = Status::get();
-        $tasks = Task::get();
-        $view->with('statuses', $statuses)
-             ->with('tasks', $tasks);
+        $view->with('statuses', $statuses);
     }
 }

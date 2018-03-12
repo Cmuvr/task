@@ -11,4 +11,8 @@ class Task extends Model
         'desc',
         'status_id',
     ];
+
+    public function status(){
+        return $this->belongsTo('App\Status', 'id');
+    }
 }
