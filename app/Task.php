@@ -15,4 +15,8 @@ class Task extends Model
     public function status(){
         return $this->belongsTo('App\Status', 'id');
     }
+
+    public function comment(){
+        return $this->hasMany('App\Comment','task_id')->orderBy('created_at', 'desc');
+    }
 }

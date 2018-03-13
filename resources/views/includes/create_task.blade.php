@@ -13,7 +13,6 @@
             </div>
             <div class="modal-body">
                 <form method="post" action="{{asset('addtask')}}" data-toggle="validator" role="form">
-
                     <div class="form-group">
                         <label for="exampleInputName">Name</label>
                         <div class="help-block">Minimum of 6 characters</div>
