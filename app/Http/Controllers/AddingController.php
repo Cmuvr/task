@@ -34,8 +34,10 @@ class AddingController extends Controller
 
     public  function getformtask(){
         $task = isset($_POST['id'])? Task::find($_POST['id']): null;
-        $status_name = $task != null ? $task->status->find($task->status_id)->name: '';
+        $status = $task != null ? $task->status->find($task->status_id): null;
+        $status_name = $status != null ? $status->name: '';
+        $status_id = $status != null ? $status->id: '';
 
-        return view('includes.form_task', compact('task', 'status_name'));
+        return view('includes.form_task', compact('task', 'status_name', 'status_id'));
     }
 }

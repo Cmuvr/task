@@ -31,7 +31,7 @@
         <div class="form-group">
             <label for="exampleInputStatus">Status</label>
             <select name="status_id" class="form-control" required>
-                <option selected {{$task == null? 'disabled': ''}}>{{$task != null ? $status_name: 'select status please'}}</option>
+                <option selected {{$task == null? 'disabled': 'value='.$status_id}}>{{$task != null ? $status_name: 'select status please'}}</option>
                 @foreach($statuses as $status)
                     @if($status->name != $status_name)
                         <option value="{{$status->id}}">{{$status->name}}</option>
