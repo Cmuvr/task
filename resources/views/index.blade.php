@@ -2,16 +2,25 @@
 
 @section('scripts')
     @parent
-    <script src="{{ asset('bootstrap-validator/js/validator.js') }}"></script>
     <script src="{{ asset('js/ajax.js') }}"></script>
 @endsection
 
 @section('content')
 <div>
-    {{--@auth--}}
-    @include('includes.create_task')
-    @include('includes.create_comment')
-    {{--@endauth--}}
+    @auth
+        <button type="button" class="btn btn-primary btn-lg js_create_task" data-toggle="modal" data-target="#modelform">
+            Create task
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="modelform" tabindex="-1" role="dialog" aria-labelledby="createModel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+
+                </div>
+            </div>
+        </div>
+    @endauth
 </div>
 
 <div>

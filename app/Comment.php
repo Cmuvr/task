@@ -12,6 +12,6 @@ class Comment extends Model
     ];
 
     public function task(){
-        return $this->belongsTo('App\Task','id');
+        return $this->belongsTo('App\Task','task_id');
     }
 }

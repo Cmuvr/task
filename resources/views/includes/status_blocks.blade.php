@@ -8,11 +8,12 @@
                         <h4 class="panel-title">
                             <a data-toggle="collapse" data-parent="#accordion_{{$status->id}}" href="#collapse_{{$task->id}}">{{$task->name}}</a>
                         </h4>
+                        <p>{{$task->comment->count()}}</p>
                     </div>
                     @auth
                         <div class="panel panel-default" style="background: #ecf1f3;">
-                            <button data-toggle="modal" data-target="#createTask">Редактировать</button>
-                            <button class="js_add_comment" data-toggle="modal" data-target="#createComment" value="{{$task->id}}">Добавить комментарий</button>
+                            <button class="js_edit_task"data-toggle="modal" data-target="#modelform" value="{{$task->id}}">Редактировать</button>
+                            <button class="js_add_comment" data-toggle="modal" data-target="#modelform" value="{{$task->id}}">Добавить комментарий</button>
                         </div>
                     @endauth
                     <div id="collapse_{{$task->id}}" class="panel-collapse collapse">
@@ -24,12 +25,9 @@
                                 {{$comment->desc}}
                             </div>
                         @endforeach
-
                     </div>
                 </div>
             @endforeach
         </div>
     </div>
 @endforeach
-
-

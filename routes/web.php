@@ -15,14 +15,12 @@ Route::get('/', 'IndexController@index');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-
-
 Route::group(['middleware' => ['auth']], function () {
     Route::post('addtask', 'AddingController@addtask');
-    Route::post('addcomment', 'AddingController@comment');
+    Route::post('updatetask', 'AddingController@updatetask');
+    Route::post('ajax/getformtask', 'AddingController@getformtask');
 
-    Route::post('ajax/getidtask', 'AddingController@getidtask');
+    Route::post('addcomment', 'AddingController@addcomment');
+    Route::post('ajax/getformcom', 'AddingController@getformcom');
 });
 
