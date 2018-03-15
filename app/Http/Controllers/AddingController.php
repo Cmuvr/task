@@ -40,4 +40,9 @@ class AddingController extends Controller
 
         return view('includes.form_task', compact('task', 'status_name', 'status_id'));
     }
+
+    public function getjson(){
+        $tasks = Task::orderBy('created_at','desc')->get();
+        return $tasks;
+    }
 }

@@ -43,4 +43,18 @@ $(function () {
     });
 
 
+    $('.js_get_json').click(function () {
+        $.get(
+            '/ajax/getjson',
+            function(data) {
+                $('.modal-content').html('');
+                for(var i in data){
+                    $('.modal-content').append(' {<br>' + 'name:  ' + data[i].name + '<br>' + 'description:  ' + data[i].desc + '<br> }<br>');
+                    console.log(data[i].name);
+                }
+            }
+        );
+    });
+
+
 })

@@ -22,5 +22,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::post('addcomment', 'AddingController@addcomment');
     Route::post('ajax/getformcom', 'AddingController@getformcom');
+
+    Route::get('ajax/getjson', 'AddingController@getjson');
 });
 

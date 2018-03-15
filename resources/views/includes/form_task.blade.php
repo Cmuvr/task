@@ -1,6 +1,6 @@
 <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <h4 class="modal-title" id="createModel">Add task</h4>
+    <h4 class="modal-title" id="createModel">{{$task == null ? 'Add task': 'Update task'}}</h4>
 </div>
 <div class="modal-body">
     <form method="post" action="{{$task == null ? asset('addtask'): asset('updatetask')}}" data-toggle="validator" role="form">
@@ -30,7 +30,7 @@
 
         <div class="form-group">
             <label for="exampleInputStatus">Status</label>
-            <select name="status_id" class="form-control" required>
+            <select name="status_id" class="form-control">
                 <option selected {{$task == null? 'disabled': 'value='.$status_id}}>{{$task != null ? $status_name: 'select status please'}}</option>
                 @foreach($statuses as $status)
                     @if($status->name != $status_name)

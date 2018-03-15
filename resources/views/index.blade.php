@@ -11,6 +11,10 @@
         <button type="button" class="btn btn-primary btn-lg js_create_task" data-toggle="modal" data-target="#modelform">
             Create task
         </button>
+    
+        <button type="button" class="btn btn-primary btn-lg js_get_json" data-toggle="modal" data-target="#modelform">
+            Get json
+        </button>
 
         <!-- Modal -->
         <div class="modal fade" id="modelform" tabindex="-1" role="dialog" aria-labelledby="createModel">
